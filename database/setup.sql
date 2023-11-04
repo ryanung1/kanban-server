@@ -23,7 +23,7 @@ CREATE TABLE token (
 
 CREATE TABLE boards (
     board_id INT GENERATED ALWAYS AS IDENTITY,
-    board_name VARCHAR(30) NOT NULL,
+    board_name VARCHAR(200) NOT NULL,
     user_id INT NOT NULL,
     PRIMARY KEY (board_id),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")
@@ -42,7 +42,7 @@ CREATE TABLE columns (
 
 CREATE TABLE tasks (
     task_id INT GENERATED ALWAYS AS IDENTITY,
-    task_name VARCHAR(30) NOT NULL,
+    task_name VARCHAR(200) NOT NULL,
     task_description VARCHAR(500) NOT NULL,
     column_id INT NOT NULL,
     completed BOOLEAN NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE tasks (
 
 CREATE TABLE subtasks (
     subtask_id INT GENERATED ALWAYS AS IDENTITY,
-    subtask_name VARCHAR(30) NOT NULL,
+    subtask_name VARCHAR(200) NOT NULL,
     subtask_description VARCHAR(500) NOT NULL,
     task_id INT NOT NULL,
     completed BOOLEAN NOT NULL,
